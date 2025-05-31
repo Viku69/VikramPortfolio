@@ -26,6 +26,7 @@ import AboutMe from "./AboutMe";
 import Experience from "./Experience";
 import SplashImg from "../../assets/images/Splash.png"; // Your splash image
 import Skill from "./Skill";
+import ContactMe from "./ContactMe";
 
 function Home() {
     const [isLoading, setIsLoading] = useState(true);
@@ -64,6 +65,9 @@ function Home() {
                     </div>
                     <div >
                         <Skill />
+                    </div>
+                    <div>
+                        <ContactMe />
                     </div>
                 </>
             )}
