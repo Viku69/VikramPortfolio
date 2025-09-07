@@ -9,7 +9,7 @@ import { useTheme } from '../../contexts/ThemeContext';
 const ExperienceDetails = [
     {
         id: 1,
-        role: "Product Engineer Trainee (iOS Developer)",
+        role: "Product Engineer Trainee (iOS)",
         imageComponent: <img src={EmbetterImg} alt="EmbetterImage" className="w-full h-full object-cover" />,
         company: "Loyalty Juggernaut Inc.",
         location: "Hyderabad",

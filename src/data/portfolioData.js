@@ -18,7 +18,7 @@ export const portfolioData = {
       specialization: "Computer Science and Engineering",
       institute: "Ajay Kumar Garg Engineering College (A.K.T.U.)",
       duration: "2021 – 2025",
-      marks: "8.13/10",
+      marks: "81.3%",
       status: "Pursuing",
       color: "from-blue-500 to-blue-700",
       icon: "🎓"
@@ -101,6 +101,20 @@ export const portfolioData = {
     },
     {
       id: 2,
+      name: "TapCart",
+      description: "QR-based self-checkout solution for retail stores with comprehensive cart management and payment workflows",
+      technologies: ["React Native", "FastAPI", "MySQL", "Next.js"],
+      github: "https://github.com/vikram-singh/tapcart",
+      features: [
+        "Engineered a QR-based self-checkout solution with cart management, order placement, and payment workflows for retail stores",
+        "Integrated FastAPI backend with authentication, order processing, reporting, and invoice generation",
+        "Leveraged Context API and state management for seamless cross-platform experience"
+      ],
+      color: "from-blue-500 to-blue-700",
+      category: "Full Stack"
+    },
+    {
+      id: 3,
       name: "TapCart",
       description: "QR-based self-checkout solution for retail stores with comprehensive cart management and payment workflows",
       technologies: ["React Native", "FastAPI", "MySQL", "Next.js"],

@@ -20,10 +20,8 @@ function ExpCard(props) {
         
         {/* Header Section */}
         <div className='flex flex-row justify-between items-center mb-8'>
-          <div className={`w-32 h-24 rounded-full ${
-            isDarkMode ? 'bg-gradient-to-br from-blue-500 to-purple-600' : 'bg-gradient-to-br from-blue-400 to-purple-500'
-          } shadow-lg`}>
-            {/* Empty capsule - no text */}
+          <div className={`w-36 h-20 rounded-full border-black-200 border-2 `}>
+
           </div>
           <div className={`w-32 h-32 border-2 rounded-2xl overflow-hidden shadow-lg ${
             isDarkMode ? 'border-gray-600' : 'border-gray-300'
