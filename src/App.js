@@ -1,19 +1,27 @@
-import { Route , Routes} from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
-import Education from './pages/Home/Education';
-import AboutMe from './pages/Home/AboutMe';
-
+import { ThemeProvider } from './contexts/ThemeContext';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 100,
+      delay: 100,
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/aboutme" element={<AboutMe/>} />
-        <Route path="/education" element={<Education />} />
-      </Routes>
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <Home />
+      </div>
+    </ThemeProvider>
   );
 }
 
