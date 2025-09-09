@@ -6,8 +6,8 @@ export const portfolioData = {
     email: "viku9667@gmail.com",
     phone: "+91 9667244829",
     location: "Hyderabad, India",
-    linkedin: "https://linkedin.com/in/vikram-singh",
-    github: "https://github.com/vikram-singh",
+    linkedin: "https://www.linkedin.com/in/vikram-singh-182a83222/",
+    github: "https://github.com/Viku69",
     summary: "Passionate iOS Developer with expertise in Swift, SwiftUI, and React Native. Experienced in building scalable mobile applications and implementing clean architecture patterns."
   },
 
@@ -33,13 +33,24 @@ export const portfolioData = {
       status: "Completed",
       color: "from-green-500 to-green-700",
       icon: "📚"
+    },
+    {
+      id: 3,
+      degree: "High School",
+      specialization: "Regular",
+      institute: "Maharishi Vidya Mandir (CBSE)",
+      duration: "2018",
+      marks: "90.8%",
+      status: "Completed",
+      color: "from-violet-500 to-pink-700",
+      icon: "📚"
     }
   ],
 
   experience: [
     {
       id: 1,
-      role: "Product Engineer Trainee (iOS Developer)",
+      role: "Product Engineer Trainee (iOS)",
       company: "Loyalty Juggernaut Inc.",
       location: "Hyderabad",
       duration: "Aug 2025 – Present",
@@ -81,6 +92,20 @@ export const portfolioData = {
         "Improved backend API efficiency and query handling speed by 30%"
       ],
       technologies: ["React Native", "SwiftUI", "UIKit", "Combine", "Kotlin", "AI/ML"],
+      color: "from-green-500 to-green-700"
+    },
+    {
+      id: 4,
+      role: "iOS Developer Intern",
+      company: "CashCry",
+      location: "Remote",
+      duration: "Oct 2023 – Dec 2023",
+      type: "Internship",
+      achievements: [
+        "Optimized user navigation with SwiftUI and UIKit, increasing average session length by 15%.",
+        "Developed a referral page using UIActivityViewController, which boosted user engagement by 20%.",
+      ],
+      technologies: ["SwiftUI", "UIKit", "Combine"],
       color: "from-green-500 to-green-700"
     }
   ],
