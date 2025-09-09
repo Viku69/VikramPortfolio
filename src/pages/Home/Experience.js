@@ -3,14 +3,15 @@ import ExperienceAvatar from '../../assets/images/ExperienceAvatar.png';
 import ExpCard from '../../components/ExpCard';
 import CahsCryImg from '../../assets/images/cashcry1.png'
 import EmbetterImg from '../../assets/images/EmbetterLogo.png'
-import MlcoeImg from '../../assets/images/Mlcoe.jpeg'
+import CogImage from '../../assets/images/CogImage.png'
+import LJIImage from '../../assets/images/LJIImage.jpeg'  
 import { useTheme } from '../../contexts/ThemeContext';
 
 const ExperienceDetails = [
     {
         id: 1,
         role: "Product Engineer Trainee (iOS)",
-        imageComponent: <img src={EmbetterImg} alt="EmbetterImage" className="w-full h-full object-cover" />,
+        imageComponent: <img src={LJIImage} alt="LJIImage" className="w-full h-full object-cover" />,
         company: "Loyalty Juggernaut Inc.",
         location: "Hyderabad",
         duration: "Aug 2025 – Present",
@@ -26,7 +27,7 @@ const ExperienceDetails = [
     {
         id: 2,
         role: "Programmer Analyst Trainee (iOS)",
-        imageComponent: <img src={CahsCryImg} alt="CashcryImage" className="w-full h-full object-cover" />,
+        imageComponent: <img src={CogImage} alt="CognizantImage" className="w-full h-full object-cover" />,
         company: "Cognizant Technology Solutions",
         location: "Remote",
         duration: "May 2025 – Jul 2025",
@@ -41,7 +42,7 @@ const ExperienceDetails = [
     {
         id: 3,
         role: "Mobile App Developer Intern",
-        imageComponent: <img src={MlcoeImg} alt="MlcoeImage" className="w-full h-full object-cover" />,
+        imageComponent: <img src={EmbetterImg} alt="MlcoeImage" className="w-full h-full object-cover" />,
         company: "Embetter Technologies",
         location: "Remote",
         duration: "Jul 2024 – Feb 2025",
@@ -53,6 +54,23 @@ const ExperienceDetails = [
         ],
         technologies: ["React Native", "SwiftUI", "UIKit", "Combine", "Kotlin", "AI/ML"]
     },
+    {
+      id: 4,
+      role: "iOS Developer Intern",
+      imageComponent: <img src={CahsCryImg} alt="MlcoeImage" className="w-full h-full object-cover" />,
+      company: "CashCry",
+      location: "Remote",
+      duration: "Oct 2023 – Dec 2023",
+      type: "Internship",
+      achievements: [
+        "Optimized user navigation with SwiftUI and UIKit, increasing average session length by 15%.",
+        "Developed a referral page using UIActivityViewController, which boosted user engagement by 20%.",
+      ],
+      technologies: ["SwiftUI", "UIKit", "Combine"],
+      color: "from-green-500 to-green-700"
+    },
+    
+    
 ];
 
 function Experience() {
