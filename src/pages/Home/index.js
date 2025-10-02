@@ -41,17 +41,15 @@ function Home() {
             setIsLoading(false);
         }, 2000); // 2000ms = 2 seconds
 
-        AOS.init({ duration: 1000 });
-
         return () => clearTimeout(timer); // Clean up the timer
     }, []);
 
     return (
-        <div className={`min-h-screen transition-colors duration-300 ${
+        <div className={`w-full min-h-screen transition-colors duration-300 ${
             isDarkMode ? 'bg-gray-900' : 'bg-white'
         }`}>
             {isLoading ? (
-                <div className={`flex items-center justify-center h-screen animate-fadeInOut ${
+                <div className={`w-full flex items-center justify-center h-screen animate-fadeInOut ${
                     isDarkMode ? 'bg-gray-900' : 'bg-white'
                 }`}>
                     <div className="flex flex-col items-center">
@@ -62,32 +60,32 @@ function Home() {
                     </div>
                 </div>
             ) : (
-                <>
+                <div className="w-full">
                     <Header />
-                    <main className="pt-20">
-                        <div id="home" data-aos="fade-up">
+                    <main className="w-full pt-16 sm:pt-20">
+                        <section id="home" className="w-full">
                             <AboutMe />
-                        </div>
-                        <div id="education" data-aos="fade-left">
+                        </section>
+                        <section id="education" className="w-full" data-aos="fade-left">
                             <Education />
-                        </div>
-                        <div id="experience" data-aos="fade-right">
+                        </section>
+                        <section id="experience" className="w-full" data-aos="fade-right">
                             <Experience />
-                        </div>
-                        <div id="skills" data-aos="fade-up">
+                        </section>
+                        <section id="skills" className="w-full" data-aos="fade-up">
                             <Skill />
-                        </div>
-                        <div id="projects" data-aos="fade-left">
+                        </section>
+                        <section id="projects" className="w-full" data-aos="fade-left">
                             <Project />
-                        </div>
-                        <div id="achievements" data-aos="fade-right">
+                        </section>
+                        <section id="achievements" className="w-full" data-aos="fade-right">
                             <Achievements />
-                        </div>
-                        <div id="contact" data-aos="fade-up">
+                        </section>
+                        <section id="contact" className="w-full" data-aos="fade-up">
                             <ContactMe />
-                        </div>
+                        </section>
                     </main>
-                </>
+                </div>
             )}
         </div>
     );

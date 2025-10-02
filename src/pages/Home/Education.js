@@ -12,9 +12,9 @@ function Education() {
   return (
     <div className={`my-20 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
       {/* Section Header */}
-      <div className='p-5 mx-10 my-auto max-w-screen-xxl'>
+      <div className='p-5 mx-4 sm:mx-6 lg:mx-10 my-auto max-w-screen-xxl'>
         <div className="text-center mb-12">
-          <h2 className={`text-4xl lg:text-5xl font-bold mb-4 ${
+          <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ${
             isDarkMode ? 'text-white' : 'text-gray-800'
           }`} data-aos="fade-up" data-aos-duration="1000">
             Education
@@ -22,7 +22,7 @@ function Education() {
           <div className={`w-24 h-1 mx-auto rounded-full ${
             isDarkMode ? 'bg-gradient-to-r from-blue-400 to-purple-500' : 'bg-gradient-to-r from-blue-500 to-purple-600'
           }`} data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"></div>
-          <p className={`text-lg mt-6 max-w-2xl mx-auto ${
+          <p className={`text-base sm:text-lg mt-6 max-w-2xl mx-auto px-4 ${
             isDarkMode ? 'text-gray-300' : 'text-gray-600'
           }`} data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
             My academic journey in computer science, highlighting key achievements and continuous learning in technology.
@@ -30,24 +30,24 @@ function Education() {
         </div>
       </div>
       
-      <div className='p-5 mx-10 my-auto max-w-screen-xxl'>
+      <div className='p-5 mx-4 sm:mx-6 lg:mx-10 my-auto max-w-screen-xxl'>
         <div className="relative">
           {/* Timeline line */}
-          <div className={`absolute left-8 top-0 bottom-0 w-1 rounded-full ${
+          <div className={`absolute left-4 sm:left-8 top-0 bottom-0 w-1 rounded-full ${
             isDarkMode ? 'bg-gradient-to-b from-blue-400 via-green-400 to-purple-400' : 'bg-gradient-to-b from-blue-500 via-green-500 to-purple-500'
           }`}></div>
           
-          <div className="space-y-12">
+          <div className="space-y-8 lg:space-y-12">
             {EducationDetails.map((education, index) => (
               <div key={education.id} className="relative flex items-center" data-aos="fade-up" data-aos-delay={index * 200} data-aos-duration="1000">
                 {/* Timeline dot */}
-                <div className={`absolute left-6 w-4 h-4 bg-gradient-to-r ${education.color} rounded-full border-4 shadow-lg z-10 ${
+                <div className={`absolute left-2 sm:left-6 w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r ${education.color} rounded-full border-2 sm:border-4 shadow-lg z-10 ${
                   isDarkMode ? 'border-gray-800' : 'border-white'
                 }`} data-aos="zoom-in" data-aos-delay={index * 200 + 300}></div>
                 
                 {/* Education card */}
-                <div className={`ml-16 w-full max-w-4xl group`} data-aos="slide-left" data-aos-delay={index * 200 + 100} data-aos-duration="1000">
-                  <div className={`border-2 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 ${
+                <div className={`ml-8 sm:ml-16 w-full max-w-4xl group`} data-aos="slide-left" data-aos-delay={index * 200 + 100} data-aos-duration="1000">
+                  <div className={`border-2 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 ${
                     isDarkMode 
                       ? 'bg-gray-800 border-gray-700 hover:border-gray-600' 
                       : 'bg-white border-gray-200 hover:border-gray-400'
@@ -55,17 +55,17 @@ function Education() {
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
                       {/* Left side - Main info */}
                       <div className="flex-1">
-                        <div className="flex items-center gap-4 mb-4">
-                          <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${education.color} flex items-center justify-center text-2xl shadow-lg`}>
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-4">
+                          <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r ${education.color} flex items-center justify-center text-xl sm:text-2xl shadow-lg flex-shrink-0`}>
                             {education.icon}
                           </div>
-                          <div>
-                            <h3 className={`text-2xl font-bold mb-1 ${
+                          <div className="flex-1">
+                            <h3 className={`text-xl sm:text-2xl font-bold mb-1 ${
                               isDarkMode ? 'text-white' : 'text-gray-800'
                             }`}>
                               {education.degree}
                             </h3>
-                            <p className={`text-lg font-medium ${
+                            <p className={`text-base sm:text-lg font-medium ${
                               isDarkMode ? 'text-gray-300' : 'text-gray-600'
                             }`}>
                               {education.specialization}
@@ -74,19 +74,19 @@ function Education() {
                         </div>
                         
                         <div className="mb-4">
-                          <h4 className={`text-xl font-semibold mb-2 ${
+                          <h4 className={`text-lg sm:text-xl font-semibold mb-2 ${
                             isDarkMode ? 'text-gray-200' : 'text-gray-700'
                           }`}>
                             {education.institute}
                           </h4>
-                          <div className="flex flex-wrap gap-4 text-gray-600">
-                            <span className={`flex items-center gap-2 ${
+                          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-4 text-gray-600">
+                            <span className={`flex items-center gap-2 text-sm sm:text-base ${
                               isDarkMode ? 'text-gray-400' : 'text-gray-600'
                             }`}>
                               <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
                               {education.duration}
                             </span>
-                            <span className={`flex items-center gap-2 ${
+                            <span className={`flex items-center gap-2 text-sm sm:text-base ${
                               isDarkMode ? 'text-gray-400' : 'text-gray-600'
                             }`}>
                               <span className="w-2 h-2 bg-green-500 rounded-full"></span>

@@ -58,54 +58,54 @@ function ContactMe() {
     return (
         <div className={`my-20 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
             {/* Section Header */}
-            <div className='p-5 mx-10 my-auto max-w-screen-xxl'>
-                <div className="text-center mb-12">
-                    <h2 className={`text-4xl lg:text-5xl font-bold mb-4 ${
+            <div className='p-5 mx-4 sm:mx-6 lg:mx-10 my-auto max-w-screen-xxl'>
+                <div className="text-center mb-12" data-aos="fade-up" data-aos-delay="100">
+                    <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ${
                         isDarkMode ? 'text-white' : 'text-gray-800'
                     }`}>
                         Contact Me
                     </h2>
                     <div className={`w-24 h-1 mx-auto rounded-full ${
                         isDarkMode ? 'bg-gradient-to-r from-blue-400 to-purple-500' : 'bg-gradient-to-r from-blue-500 to-purple-600'
-                    }`}></div>
-                    <p className={`text-lg mt-6 max-w-2xl mx-auto ${
+                    }`} data-aos="zoom-in" data-aos-delay="200"></div>
+                    <p className={`text-base sm:text-lg mt-6 max-w-2xl mx-auto px-4 ${
                         isDarkMode ? 'text-gray-300' : 'text-gray-600'
-                    }`}>
+                    }`} data-aos="fade-up" data-aos-delay="300">
                         Let's connect and discuss opportunities, projects, or just have a conversation about technology and innovation.
                     </p>
                 </div>
             </div>
             
-            <div className='p-5 mx-10 my-auto max-w-screen-xxl'>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className='p-5 mx-4 sm:mx-6 lg:mx-10 my-auto max-w-screen-xxl'>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                     {/* Contact Information */}
-                    <div>
-                        <h3 className={`text-3xl font-bold mb-8 ${
+                    <div data-aos="fade-right" data-aos-delay="200">
+                        <h3 className={`text-2xl sm:text-3xl font-bold mb-6 lg:mb-8 ${
                             isDarkMode ? 'text-white' : 'text-gray-800'
                         }`}>
                             Get In Touch
                         </h3>
-                        <p className={`text-lg mb-8 leading-relaxed ${
+                        <p className={`text-base sm:text-lg mb-6 lg:mb-8 leading-relaxed ${
                             isDarkMode ? 'text-gray-300' : 'text-gray-600'
                         }`}>
                             I'm always open to discussing new opportunities, creative projects, or just having a chat about technology and innovation. Feel free to reach out!
                         </p>
                         
-                        <div className="space-y-6">
+                        <div className="space-y-4 sm:space-y-6">
                             {contactMethods.map((method, index) => (
-                                <div key={index} className="flex items-center gap-4">
-                                    <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${method.color} flex items-center justify-center text-xl shadow-lg`}>
+                                <div key={index} className="flex items-center gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay={300 + (index * 100)}>
+                                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r ${method.color} flex items-center justify-center text-lg sm:text-xl shadow-lg flex-shrink-0`}>
                                         {method.icon}
                                     </div>
-                                    <div>
-                                        <h4 className={`font-semibold ${
+                                    <div className="flex-1 min-w-0">
+                                        <h4 className={`font-semibold text-sm sm:text-base ${
                                             isDarkMode ? 'text-white' : 'text-gray-800'
                                         }`}>
                                             {method.title}
                                         </h4>
                                         <a 
                                             href={method.link}
-                                            className={`text-sm transition-colors duration-200 ${
+                                            className={`text-xs sm:text-sm transition-colors duration-200 break-all ${
                                                 isDarkMode 
                                                     ? 'text-gray-400 hover:text-white' 
                                                     : 'text-gray-600 hover:text-gray-800'
@@ -120,36 +120,38 @@ function ContactMe() {
                     </div>
 
                     {/* Social Links & Quick Actions */}
-                    <div>
-                        <h3 className={`text-3xl font-bold mb-8 ${
+                    <div data-aos="fade-left" data-aos-delay="400">
+                        <h3 className={`text-2xl sm:text-3xl font-bold mb-6 lg:mb-8 ${
                             isDarkMode ? 'text-white' : 'text-gray-800'
                         }`}>
                             Connect With Me
                         </h3>
                         
-                        <div className="space-y-6">
+                        <div className="space-y-4 sm:space-y-6">
                             {socialLinks.map((social, index) => (
                                 <a
                                     key={index}
                                     href={social.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`flex items-center gap-4 p-4 rounded-2xl border-2 transition-all duration-300 hover:scale-105 ${
+                                    className={`flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-2xl border-2 transition-all duration-300 hover:scale-105 ${
                                         isDarkMode 
                                             ? 'bg-gray-800 border-gray-700 hover:border-gray-600' 
                                             : 'bg-white border-gray-200 hover:border-gray-400'
                                     }`}
+                                    data-aos="fade-up" 
+                                    data-aos-delay={500 + (index * 100)}
                                 >
-                                    <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${social.color} flex items-center justify-center text-white shadow-lg`}>
+                                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r ${social.color} flex items-center justify-center text-white shadow-lg flex-shrink-0`}>
                                         {social.icon}
                                     </div>
-                                    <div>
-                                        <h4 className={`font-semibold ${
+                                    <div className="flex-1 min-w-0">
+                                        <h4 className={`font-semibold text-sm sm:text-base ${
                                             isDarkMode ? 'text-white' : 'text-gray-800'
                                         }`}>
                                             {social.name}
                                         </h4>
-                                        <p className={`text-sm ${
+                                        <p className={`text-xs sm:text-sm ${
                                             isDarkMode ? 'text-gray-400' : 'text-gray-600'
                                         }`}>
                                             Follow me on {social.name}
@@ -160,21 +162,21 @@ function ContactMe() {
                         </div>
 
                         {/* Quick Actions */}
-                        <div className="mt-8">
-                            <h4 className={`text-xl font-semibold mb-4 ${
+                        <div className="mt-6 lg:mt-8" data-aos="fade-up" data-aos-delay="700">
+                            <h4 className={`text-lg sm:text-xl font-semibold mb-4 ${
                                 isDarkMode ? 'text-white' : 'text-gray-800'
                             }`}>
                                 Quick Actions
                             </h4>
-                            <div className="flex flex-col sm:flex-row gap-4">
-                                <button className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 ${
+                            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                                <button className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 hover:scale-105 ${
                                     isDarkMode 
                                         ? 'bg-blue-600 text-white hover:bg-blue-700' 
                                         : 'bg-blue-600 text-white hover:bg-blue-700'
                                 }`}>
                                     📄 Download Resume
                                 </button>
-                                <button className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 ${
+                                <button className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 hover:scale-105 ${
                                     isDarkMode 
                                         ? 'bg-gray-700 text-white hover:bg-gray-600 border border-gray-600' 
                                         : 'bg-gray-100 text-gray-800 hover:bg-gray-200 border border-gray-300'
@@ -187,10 +189,10 @@ function ContactMe() {
                 </div>
 
                 {/* Footer */}
-                <div className={`mt-16 pt-8 border-t text-center ${
+                <div className={`mt-12 lg:mt-16 pt-6 lg:pt-8 border-t text-center ${
                     isDarkMode ? 'border-gray-700' : 'border-gray-200'
-                }`}>
-                    <p className={`text-sm ${
+                }`} data-aos="fade-up" data-aos-delay="800">
+                    <p className={`text-xs sm:text-sm px-4 ${
                         isDarkMode ? 'text-gray-400' : 'text-gray-600'
                     }`}>
                         © 2024 {personalInfo.name}. Built with React & Tailwind CSS. All rights reserved.

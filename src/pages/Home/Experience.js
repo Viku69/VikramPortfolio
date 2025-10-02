@@ -79,9 +79,9 @@ function Experience() {
   return (
     <div className={`my-20 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
       {/* Section Header */}
-      <div className='p-5 mx-10 my-auto max-w-screen-xxl'>
+      <div className='p-5 mx-4 sm:mx-6 lg:mx-10 my-auto max-w-screen-xxl'>
         <div className="text-center mb-12">
-          <h2 className={`text-4xl lg:text-5xl font-bold mb-4 ${
+          <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ${
             isDarkMode ? 'text-white' : 'text-gray-800'
           }`} data-aos="fade-up" data-aos-duration="1000">
             Work Experience
@@ -89,7 +89,7 @@ function Experience() {
           <div className={`w-24 h-1 mx-auto rounded-full ${
             isDarkMode ? 'bg-gradient-to-r from-blue-400 to-purple-500' : 'bg-gradient-to-r from-blue-500 to-purple-600'
           }`} data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"></div>
-          <p className={`text-lg mt-6 max-w-2xl mx-auto ${
+          <p className={`text-base sm:text-lg mt-6 max-w-2xl mx-auto px-4 ${
             isDarkMode ? 'text-gray-300' : 'text-gray-600'
           }`} data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
             My professional journey in software development, showcasing growth and impact across different roles and technologies.
@@ -97,15 +97,36 @@ function Experience() {
         </div>
       </div>
 
-      <div className='p-5 mx-10 my-auto max-w-screen-xxl'>
-        {/* Horizontal Scrollable Cards */}
-        <div className={`flex overflow-x-auto whitespace-nowrap w-full items-center scrollbar-hide ${
-          isDarkMode ? 'bg-gray-900' : 'bg-white'
-        }`} style={{ scrollBehavior: 'smooth' }}>
-          <div className="flex items-center gap-6">
-            {ExperienceDetails.map((data, index) => {
-              return (
-                <div key={data.id} className="flex-none" data-aos="slide-up" data-aos-delay={index * 300} data-aos-duration="1000">
+      <div className='p-5 mx-4 sm:mx-6 lg:mx-10 my-auto max-w-screen-xxl'>
+        {/* Responsive Cards Layout */}
+        <div className="block lg:hidden">
+          {/* Mobile/Tablet: Vertical Stack */}
+          <div className="space-y-6">
+            {ExperienceDetails.map((data, index) => (
+              <div key={data.id} className="flex justify-center" data-aos="fade-up" data-aos-delay={index * 200} data-aos-duration="1000">
+                <ExpCard 
+                  Role={data.role} 
+                  ImageComponent={data.imageComponent}
+                  company={data.company}
+                  location={data.location}
+                  duration={data.duration}
+                  type={data.type}
+                  achievements={data.achievements}
+                  technologies={data.technologies}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="hidden lg:block">
+          {/* Desktop: Horizontal Scroll */}
+          <div className={`flex overflow-x-auto w-full items-center scrollbar-hide pb-4 ${
+            isDarkMode ? 'bg-gray-900' : 'bg-white'
+          }`} style={{ scrollBehavior: 'smooth' }}>
+            <div className="flex items-center gap-6 px-4">
+              {ExperienceDetails.map((data, index) => (
+                <div key={data.id} className="flex-none" data-aos="slide-right" data-aos-delay={index * 200} data-aos-duration="1000">
                   <ExpCard 
                     Role={data.role} 
                     ImageComponent={data.imageComponent}
@@ -117,8 +138,8 @@ function Experience() {
                     technologies={data.technologies}
                   />
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
         </div>
       </div>
