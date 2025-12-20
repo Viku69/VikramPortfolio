@@ -12,7 +12,7 @@ function Achievements() {
   return (
     <div className={`my-20 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
       {/* Section Header */}
-      <div className='p-5 mx-4 sm:mx-6 lg:mx-10 my-auto max-w-screen-xxl'>
+      <div className='p-5 mx-auto my-auto max-w-screen-xxl w-full px-4 sm:px-6 lg:px-10'>
         <div className="text-center mb-12" data-aos="fade-up" data-aos-delay="100">
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ${
             isDarkMode ? 'text-white' : 'text-gray-800'
@@ -30,7 +30,7 @@ function Achievements() {
         </div>
       </div>
       
-      <div className='p-5 mx-4 sm:mx-6 lg:mx-10 my-auto max-w-screen-xxl'>
+      <div className='p-5 mx-auto my-auto max-w-screen-xxl w-full px-4 sm:px-6 lg:px-10'>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-16">
           {AchievementDetails.map((achievement, index) => (
             <div key={achievement.id} className="group" data-aos="fade-up" data-aos-delay={100 * (index + 1)}>
@@ -119,7 +119,7 @@ function Achievements() {
       </div>
 
       {/* Positions of Responsibility Section */}
-      <div className='p-5 mx-4 sm:mx-6 lg:mx-10 my-auto max-w-screen-xxl'>
+      <div className='p-5 mx-auto my-auto max-w-screen-xxl w-full px-4 sm:px-6 lg:px-10'>
         <div className="text-center mb-12" data-aos="fade-up" data-aos-delay="100">
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ${
             isDarkMode ? 'text-white' : 'text-gray-800'
@@ -137,7 +137,7 @@ function Achievements() {
         </div>
       </div>
       
-      <div className='p-5 mx-4 sm:mx-6 lg:mx-10 my-auto max-w-screen-xxl'>
+      <div className='p-5 mx-auto my-auto max-w-screen-xxl w-full px-4 sm:px-6 lg:px-10'>
         <div className="space-y-6 lg:space-y-8">
           {PositionDetails.map((position, index) => (
             <div key={position.id} className="group" data-aos="fade-left" data-aos-delay={100 * (index + 1)}>

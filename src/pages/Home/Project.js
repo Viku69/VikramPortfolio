@@ -11,7 +11,7 @@ function Project() {
   return (
     <div className={`my-20 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
       {/* Section Header */}
-      <div className='p-5 mx-10 my-auto max-w-screen-xxl'>
+      <div className='p-5 mx-auto my-auto max-w-screen-xxl w-full px-4 sm:px-6 lg:px-10'>
         <div className="text-center mb-12">
           <h2 className={`text-4xl lg:text-5xl font-bold mb-4 ${
             isDarkMode ? 'text-white' : 'text-gray-800'
@@ -29,7 +29,7 @@ function Project() {
         </div>
       </div>
       
-      <div className='p-2 sm:p-4 lg:p-5 mx-2 sm:mx-4 lg:mx-10 my-auto max-w-screen-xxl'>
+      <div className='p-2 sm:p-4 lg:p-5 mx-auto my-auto max-w-screen-xxl w-full px-2 sm:px-4 lg:px-10'>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
           {ProjectDetails.map((project, index) => (
             <div key={project.id} className="group" data-aos="fade-up" data-aos-delay={index * 200} data-aos-duration="1000">

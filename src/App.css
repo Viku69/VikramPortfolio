@@ -111,16 +111,23 @@ html {
 html, body {
   width: 100%;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .App {
   width: 100%;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 /* Header Layout Fix */
@@ -154,6 +161,28 @@ header nav {
   header nav > div:last-child {
     flex-shrink: 0 !important;
   }
+}
+
+/* Large screen optimizations (24-inch and above) */
+@media (min-width: 1920px) {
+  .max-w-screen-xxl {
+    max-width: 1600px !important;
+  }
+}
+
+/* Ensure all sections are properly contained */
+section {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Prevent horizontal overflow on all containers */
+.container,
+.max-w-screen-xxl,
+.max-w-screen-2xl,
+.max-w-screen-3xl {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Prevent AOS from affecting layout during initialization */

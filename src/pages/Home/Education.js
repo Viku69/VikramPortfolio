@@ -12,7 +12,7 @@ function Education() {
   return (
     <div className={`my-20 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
       {/* Section Header */}
-      <div className='p-5 mx-4 sm:mx-6 lg:mx-10 my-auto max-w-screen-xxl'>
+      <div className='p-5 mx-auto my-auto max-w-screen-xxl w-full px-4 sm:px-6 lg:px-10'>
         <div className="text-center mb-12">
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ${
             isDarkMode ? 'text-white' : 'text-gray-800'
@@ -30,7 +30,7 @@ function Education() {
         </div>
       </div>
       
-      <div className='p-5 mx-4 sm:mx-6 lg:mx-10 my-auto max-w-screen-xxl'>
+      <div className='p-5 mx-auto my-auto max-w-screen-xxl w-full px-4 sm:px-6 lg:px-10'>
         <div className="relative">
           {/* Timeline line */}
           <div className={`absolute left-4 sm:left-8 top-0 bottom-0 w-1 rounded-full ${

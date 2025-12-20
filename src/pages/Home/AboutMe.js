@@ -8,28 +8,28 @@ function AboutMe() {
     const { personalInfo } = portfolioData;
 
     return (
-        <div className={`min-h-screen flex flex-col lg:flex-row justify-between items-stretch p-3 sm:p-5 mx-2 sm:mx-4 lg:mx-10 my-auto max-w-screen-xxl relative gap-4 lg:gap-6 ${
+        <div className={`min-h-screen flex flex-col lg:flex-row justify-between items-stretch p-5 mx-auto my-auto max-w-screen-xxl w-full px-4 lg:px-10 relative gap-6 ${
             isDarkMode ? 'bg-gray-900' : 'bg-white'
         }`}>
             {/* Main Content */}
-            <div className={`w-full lg:w-8/12 border-2 rounded-2xl sm:rounded-3xl flex flex-col justify-between px-4 sm:px-6 lg:px-10 py-6 sm:py-8 lg:py-16 relative ${
+            <div className={`w-full lg:w-8/12 border-2 rounded-3xl flex flex-col justify-between px-6 lg:px-10 py-8 lg:py-16 relative ${
                 isDarkMode ? 'border-gray-600 bg-gray-800' : 'border-gray-400 bg-white'
             }`} data-aos="fade-right" data-aos-duration="1200" data-aos-easing="ease-out-cubic">
-                <div className='flex flex-col gap-y-4 sm:gap-y-6 lg:gap-y-10'>
-                    <h1 className={`text-2xl sm:text-4xl lg:text-8xl font-bold ${
+                <div className='flex flex-col gap-y-6 lg:gap-y-10'>
+                    <h1 className={`text-4xl lg:text-8xl font-bold ${
                         isDarkMode ? 'text-white' : 'text-gray-900'
                     }`} data-aos="fade-up" data-aos-delay="200">
                         Hello !
                     </h1>
-                    <h1 className='text-xl sm:text-3xl lg:text-7xl p-2 bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-2xl sm:rounded-3xl font-bold' data-aos="fade-up" data-aos-delay="400">
+                    <h1 className='text-3xl lg:text-7xl p-2 bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-3xl font-bold' data-aos="fade-up" data-aos-delay="400">
                         I'm {personalInfo.name}
                     </h1>
-                    <h2 className='text-lg sm:text-2xl lg:text-5xl p-2 bg-gradient-to-r from-orange-400 to-pink-500 text-white rounded-2xl sm:rounded-3xl font-bold' data-aos="fade-up" data-aos-delay="600">
+                    <h2 className='text-2xl lg:text-5xl p-2 bg-gradient-to-r from-orange-400 to-pink-500 text-white rounded-3xl font-bold' data-aos="fade-up" data-aos-delay="600">
                         {personalInfo.title}
                     </h2>
                     
                     {/* Summary */}
-                    <p className={`text-sm sm:text-lg lg:text-xl leading-relaxed mt-4 sm:mt-6 ${
+                    <p className={`text-lg lg:text-xl leading-relaxed mt-6 ${
                         isDarkMode ? 'text-gray-300' : 'text-gray-600'
                     }`} data-aos="fade-up" data-aos-delay="800">
                         {personalInfo.summary}
@@ -37,15 +37,15 @@ function AboutMe() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className='flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-8 text-sm sm:text-lg lg:text-3xl mt-6 sm:mt-8' data-aos="fade-up" data-aos-delay="1000">
-                    <button className={`border-2 sm:border-4 rounded-2xl sm:rounded-3xl px-4 sm:px-6 lg:px-10 py-2 sm:py-3 lg:py-4 shadow-lg sm:shadow-2xl transition-all duration-300 hover:scale-105 ${
+                <div className='flex flex-col sm:flex-row gap-4 lg:gap-8 text-lg lg:text-3xl mt-8' data-aos="fade-up" data-aos-delay="1000">
+                    <button className={`border-4 rounded-3xl px-6 lg:px-10 py-3 lg:py-4 shadow-2xl transition-all duration-300 hover:scale-105 ${
                         isDarkMode 
                             ? 'bg-gray-700 border-gray-500 text-white hover:bg-gray-600' 
                             : 'bg-white border-black text-black hover:bg-gray-100'
                     }`}>
                         📄 Resume
                     </button>
-                    <button className={`border-2 sm:border-4 rounded-2xl sm:rounded-3xl px-4 sm:px-6 lg:px-10 py-2 sm:py-3 lg:py-4 shadow-lg sm:shadow-2xl transition-all duration-300 hover:scale-105 ${
+                    <button className={`border-4 rounded-3xl px-6 lg:px-10 py-3 lg:py-4 shadow-2xl transition-all duration-300 hover:scale-105 ${
                         isDarkMode 
                             ? 'bg-blue-600 border-blue-500 text-white hover:bg-blue-700' 
                             : 'bg-blue-600 border-blue-500 text-white hover:bg-blue-700'

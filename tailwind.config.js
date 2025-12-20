@@ -10,10 +10,14 @@ module.exports = {
       },
       screens: {
         'xs': '475px',
-        '3xl': '1600px',
+        '2xl': '1536px',
+        '3xl': '1920px',
+        '4xl': '2560px',
       },
       maxWidth: {
         'screen-xxl': '1400px',
+        'screen-2xl': '1536px',
+        'screen-3xl': '1920px',
       },
       keyframes: {
         fadeInOut: {
