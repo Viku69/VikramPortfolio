@@ -1,35 +1,23 @@
-import React from 'react'
-import ProjectAvatar from '../../assets/images/ProjectAvatar.png'
-import { useTheme } from '../../contexts/ThemeContext'
-import { portfolioData } from '../../data/portfolioData'
+import React from 'react';
+import { useTheme } from '../../contexts/ThemeContext';
+import { portfolioData } from '../../data/portfolioData';
+import { SectionHeader } from '../../components/ui/SectionHeader';
+import { Container } from '../../components/ui/Container';
 
-const ProjectDetails = portfolioData.projects;
-
-function Project() {
+const Project: React.FC = () => {
   const { isDarkMode } = useTheme();
+  const ProjectDetails = portfolioData.projects;
 
   return (
     <div className={`my-20 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
-      {/* Section Header */}
-      <div className='p-5 mx-auto my-auto max-w-screen-xxl w-full px-4 sm:px-6 lg:px-10'>
-        <div className="text-center mb-12">
-          <h2 className={`text-4xl lg:text-5xl font-bold mb-4 ${
-            isDarkMode ? 'text-white' : 'text-gray-800'
-          }`} data-aos="fade-up" data-aos-duration="1000">
-            Featured Projects
-          </h2>
-          <div className={`w-24 h-1 mx-auto rounded-full ${
-            isDarkMode ? 'bg-gradient-to-r from-blue-400 to-purple-500' : 'bg-gradient-to-r from-blue-500 to-purple-600'
-          }`} data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"></div>
-          <p className={`text-lg mt-6 max-w-2xl mx-auto ${
-            isDarkMode ? 'text-gray-300' : 'text-gray-600'
-          }`} data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
-            Showcasing innovative projects that demonstrate technical expertise, problem-solving skills, and real-world impact.
-          </p>
-        </div>
-      </div>
+      <Container>
+        <SectionHeader 
+          title="Featured Projects"
+          description="Showcasing innovative projects that demonstrate technical expertise, problem-solving skills, and real-world impact."
+        />
+      </Container>
       
-      <div className='p-2 sm:p-4 lg:p-5 mx-auto my-auto max-w-screen-xxl w-full px-2 sm:px-4 lg:px-10'>
+      <Container className="p-2 sm:p-4 lg:p-5">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
           {ProjectDetails.map((project, index) => (
             <div key={project.id} className="group" data-aos="fade-up" data-aos-delay={index * 200} data-aos-duration="1000">
@@ -171,11 +159,10 @@ function Project() {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Project
+export default Project;
 
-/// commit 

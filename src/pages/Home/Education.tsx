@@ -1,36 +1,23 @@
-import React from 'react'
-import EducationAvatar from '../../assets/images/EducationAvatar.png'
-import Title from '../../components/Title'
-import { useTheme } from '../../contexts/ThemeContext'
-import { portfolioData } from '../../data/portfolioData'
+import React from 'react';
+import { useTheme } from '../../contexts/ThemeContext';
+import { portfolioData } from '../../data/portfolioData';
+import { SectionHeader } from '../../components/ui/SectionHeader';
+import { Container } from '../../components/ui/Container';
 
-const EducationDetails = portfolioData.education;
-
-function Education() {
+const Education: React.FC = () => {
   const { isDarkMode } = useTheme();
+  const EducationDetails = portfolioData.education;
 
   return (
     <div className={`my-20 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
-      {/* Section Header */}
-      <div className='p-5 mx-auto my-auto max-w-screen-xxl w-full px-4 sm:px-6 lg:px-10'>
-        <div className="text-center mb-12">
-          <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ${
-            isDarkMode ? 'text-white' : 'text-gray-800'
-          }`} data-aos="fade-up" data-aos-duration="1000">
-            Education
-          </h2>
-          <div className={`w-24 h-1 mx-auto rounded-full ${
-            isDarkMode ? 'bg-gradient-to-r from-blue-400 to-purple-500' : 'bg-gradient-to-r from-blue-500 to-purple-600'
-          }`} data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"></div>
-          <p className={`text-base sm:text-lg mt-6 max-w-2xl mx-auto px-4 ${
-            isDarkMode ? 'text-gray-300' : 'text-gray-600'
-          }`} data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
-            My academic journey in computer science, highlighting key achievements and continuous learning in technology.
-          </p>
-        </div>
-      </div>
+      <Container>
+        <SectionHeader 
+          title="Education"
+          description="My academic journey in computer science, highlighting key achievements and continuous learning in technology."
+        />
+      </Container>
       
-      <div className='p-5 mx-auto my-auto max-w-screen-xxl w-full px-4 sm:px-6 lg:px-10'>
+      <Container>
         <div className="relative">
           {/* Timeline line */}
           <div className={`absolute left-4 sm:left-8 top-0 bottom-0 w-1 rounded-full ${
@@ -190,9 +177,10 @@ function Education() {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Education
+export default Education;
+

@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import HomeAvatar from '../assets/images/HomeAvatar.png'
-import { useTheme } from '../contexts/ThemeContext'
+import React, { useState, useEffect } from 'react';
+import { useTheme } from '../contexts/ThemeContext';
+import { navItems } from '../config/routes';
+import HomeAvatar from '../assets/images/HomeAvatar.png';
 
-function Header() {
+export const Header: React.FC = () => {
   const { isDarkMode, toggleTheme } = useTheme();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [activeSection, setActiveSection] = useState<string>('home');
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string): void => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ 
@@ -21,7 +22,7 @@ function Header() {
 
   // Update active section on scroll
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       const sections = ['home', 'education', 'experience', 'skills', 'projects', 'achievements', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
@@ -40,16 +41,6 @@ function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'education', label: 'Education' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'achievements', label: 'Achievements' },
-    { id: 'contact', label: 'Contact' }
-  ];
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -154,7 +145,8 @@ function Header() {
         </div>
       )}
     </header>
-  )
-}
+  );
+};
 
 export default Header;
+

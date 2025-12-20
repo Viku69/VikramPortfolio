@@ -1,9 +1,9 @@
-import React from 'react'
-import AboutAvatar from '../../assets/images/AboutAvatar.png'
-import { useTheme } from '../../contexts/ThemeContext'
-import { portfolioData } from '../../data/portfolioData'
+import React from 'react';
+import AboutAvatar from '../../assets/images/AboutAvatar.png';
+import { useTheme } from '../../contexts/ThemeContext';
+import { portfolioData } from '../../data/portfolioData';
 
-function AboutMe() {
+const AboutMe: React.FC = () => {
     const { isDarkMode } = useTheme();
     const { personalInfo } = portfolioData;
 
@@ -130,7 +130,8 @@ function AboutMe() {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default AboutMe
+export default AboutMe;
+

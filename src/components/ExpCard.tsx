@@ -1,11 +1,21 @@
-import React, { useState } from 'react'
-import { useTheme } from '../contexts/ThemeContext'
+import React, { useState } from 'react';
+import { ExpCardProps } from '../types';
+import { useTheme } from '../contexts/ThemeContext';
 
-function ExpCard(props) {
+export const ExpCard: React.FC<ExpCardProps> = ({
+  Role,
+  ImageComponent,
+  company,
+  location,
+  duration,
+  type,
+  achievements,
+  technologies
+}) => {
   const { isDarkMode } = useTheme();
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [isFlipped, setIsFlipped] = useState<boolean>(false);
 
-  const toggleFlip = () => {
+  const toggleFlip = (): void => {
     setIsFlipped(!isFlipped);
   };
 
@@ -26,8 +36,8 @@ function ExpCard(props) {
             <div className={`w-20 h-20 sm:w-24 sm:h-24 border-2 rounded-2xl overflow-hidden shadow-lg ${
               isDarkMode ? 'border-gray-600' : 'border-gray-300'
             }`}>
-              {props.ImageComponent ? (
-                props.ImageComponent
+              {ImageComponent ? (
+                ImageComponent
               ) : (
                 <div className={`h-full w-full rounded-2xl flex items-center justify-center ${
                   isDarkMode ? 'bg-gray-700' : 'bg-gray-100'
@@ -45,27 +55,27 @@ function ExpCard(props) {
             <h1 className={`font-bold text-lg sm:text-xl lg:text-2xl mb-2 leading-tight ${
               isDarkMode ? 'text-white' : 'text-gray-900'
             }`}>
-              {props.Role}
+              {Role}
             </h1>
             <h2 className={`font-semibold text-base sm:text-lg mb-3 ${
               isDarkMode ? 'text-blue-400' : 'text-blue-600'
             }`}>
-              {props.company}
+              {company}
             </h2>
             <div className={`flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-xs sm:text-sm ${
               isDarkMode ? 'text-gray-300' : 'text-gray-600'
             }`}>
               <span className="flex items-center gap-1">
                 <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                {props.location}
+                {location}
               </span>
               <span className="flex items-center gap-1">
                 <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                {props.duration}
+                {duration}
               </span>
             </div>
             <span className={`mt-3 px-3 py-1 rounded-full text-xs font-medium ${
-              props.type === 'Full-time'
+              type === 'Full-time'
                 ? isDarkMode
                   ? 'bg-green-900 text-green-300 border border-green-700'
                   : 'bg-green-100 text-green-800 border border-green-200'
@@ -73,7 +83,7 @@ function ExpCard(props) {
                   ? 'bg-blue-900 text-blue-300 border border-blue-700'
                   : 'bg-blue-100 text-blue-800 border border-blue-200'
             }`}>
-              {props.type}
+              {type}
             </span>
           </div>
 
@@ -116,7 +126,7 @@ function ExpCard(props) {
               Key Achievements:
             </h4>
             <ul className="space-y-2 mb-4">
-              {props.achievements?.slice(0, 3).map((achievement, idx) => (
+              {achievements?.slice(0, 3).map((achievement, idx) => (
                 <li key={idx} className="flex items-start gap-2">
                   <span className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${
                     isDarkMode ? 'bg-blue-400' : 'bg-blue-500'
@@ -140,7 +150,7 @@ function ExpCard(props) {
                 Technologies:
               </h4>
               <div className="flex flex-wrap gap-1.5">
-                {props.technologies?.map((tech, idx) => (
+                {technologies?.map((tech, idx) => (
                   <span key={idx} className={`px-2 py-1 rounded-full text-xs font-medium ${
                     isDarkMode 
                       ? 'bg-gray-700 text-gray-300' 
@@ -166,7 +176,8 @@ function ExpCard(props) {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ExpCard
+export default ExpCard;
+

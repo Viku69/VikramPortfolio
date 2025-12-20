@@ -1,14 +1,29 @@
-import React from 'react'
-import ContactAvatar from '../../assets/images/ContactAvatar.png'
-import Title from '../../components/Title'
-import { useTheme } from '../../contexts/ThemeContext'
-import { portfolioData } from '../../data/portfolioData'
+import React from 'react';
+import { useTheme } from '../../contexts/ThemeContext';
+import { portfolioData } from '../../data/portfolioData';
+import { SectionHeader } from '../../components/ui/SectionHeader';
+import { Container } from '../../components/ui/Container';
 
-function ContactMe() {
+interface ContactMethod {
+    icon: string;
+    title: string;
+    value: string;
+    link: string;
+    color: string;
+}
+
+interface SocialLink {
+    name: string;
+    icon: React.ReactNode;
+    link: string;
+    color: string;
+}
+
+const ContactMe: React.FC = () => {
     const { isDarkMode } = useTheme();
     const { personalInfo } = portfolioData;
 
-    const contactMethods = [
+    const contactMethods: ContactMethod[] = [
         {
             icon: "📧",
             title: "Email",
@@ -32,7 +47,7 @@ function ContactMe() {
         }
     ];
 
-    const socialLinks = [
+    const socialLinks: SocialLink[] = [
         {
             name: "LinkedIn",
             icon: (
@@ -57,26 +72,14 @@ function ContactMe() {
 
     return (
         <div className={`my-20 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
-            {/* Section Header */}
-            <div className='p-5 mx-auto my-auto max-w-screen-xxl w-full px-4 sm:px-6 lg:px-10'>
-                <div className="text-center mb-12" data-aos="fade-up" data-aos-delay="100">
-                    <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ${
-                        isDarkMode ? 'text-white' : 'text-gray-800'
-                    }`}>
-                        Contact Me
-                    </h2>
-                    <div className={`w-24 h-1 mx-auto rounded-full ${
-                        isDarkMode ? 'bg-gradient-to-r from-blue-400 to-purple-500' : 'bg-gradient-to-r from-blue-500 to-purple-600'
-                    }`} data-aos="zoom-in" data-aos-delay="200"></div>
-                    <p className={`text-base sm:text-lg mt-6 max-w-2xl mx-auto px-4 ${
-                        isDarkMode ? 'text-gray-300' : 'text-gray-600'
-                    }`} data-aos="fade-up" data-aos-delay="300">
-                        Let's connect and discuss opportunities, projects, or just have a conversation about technology and innovation.
-                    </p>
-                </div>
-            </div>
+            <Container>
+                <SectionHeader 
+                    title="Contact Me"
+                    description="Let's connect and discuss opportunities, projects, or just have a conversation about technology and innovation."
+                />
+            </Container>
             
-            <div className='p-5 mx-auto my-auto max-w-screen-xxl w-full px-4 sm:px-6 lg:px-10'>
+            <Container>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                     {/* Contact Information */}
                     <div data-aos="fade-right" data-aos-delay="200">
@@ -198,9 +201,10 @@ function ContactMe() {
                         © 2024 {personalInfo.name}. Built with React & Tailwind CSS. All rights reserved.
                     </p>
                 </div>
-            </div>
+            </Container>
         </div>
-    )
-}
+    );
+};
 
-export default ContactMe
+export default ContactMe;
+

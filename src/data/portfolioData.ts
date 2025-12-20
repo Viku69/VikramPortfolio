@@ -1,5 +1,6 @@
-// Portfolio data structure - ready for API integration
-export const portfolioData = {
+import { PortfolioData } from '../types';
+
+export const portfolioData: PortfolioData = {
   personalInfo: {
     name: "Vikram Singh",
     title: "iOS Developer & Software Engineer",
@@ -137,20 +138,6 @@ export const portfolioData = {
       ],
       color: "from-blue-500 to-blue-700",
       category: "Full Stack"
-    },
-    {
-      id: 3,
-      name: "TapCart",
-      description: "QR-based self-checkout solution for retail stores with comprehensive cart management and payment workflows",
-      technologies: ["React Native", "FastAPI", "MySQL", "Next.js"],
-      github: "https://github.com/vikram-singh/tapcart",
-      features: [
-        "Engineered a QR-based self-checkout solution with cart management, order placement, and payment workflows for retail stores",
-        "Integrated FastAPI backend with authentication, order processing, reporting, and invoice generation",
-        "Leveraged Context API and state management for seamless cross-platform experience"
-      ],
-      color: "from-blue-500 to-blue-700",
-      category: "Full Stack"
     }
   ],
 
@@ -227,7 +214,7 @@ export const portfolioData = {
 };
 
 // API integration functions (for future use)
-export const fetchPortfolioData = async () => {
+export const fetchPortfolioData = async (): Promise<PortfolioData> => {
   // This will be replaced with actual API calls
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -236,7 +223,7 @@ export const fetchPortfolioData = async () => {
   });
 };
 
-export const updatePortfolioData = async (data) => {
+export const updatePortfolioData = async (data: Partial<PortfolioData>): Promise<{ success: boolean; data: Partial<PortfolioData> }> => {
   // This will be replaced with actual API calls
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -244,6 +231,4 @@ export const updatePortfolioData = async (data) => {
     }, 1000);
   });
 };
-
-
 
